@@ -1,5 +1,5 @@
 // Initialize the map centered on default location
-let map = L.map('map').setView([40, -95], 4);
+let map = L.map('map').setView([-37.0, 174.8], 12);
 
 // Define multiple basemaps
 const baseMaps = {
@@ -49,13 +49,13 @@ fetch('LilysHouse_Cop_FeaturesToJSO.json')
                 // Create popup content from feature properties
                 let popupContent = '<div style="font-family: Arial; font-size: 14px;">';
                 
-                if (feature.properties.name) {
-                    popupContent += '<h3 style="margin: 0 0 10px 0;">' + feature.properties.name + '</h3>';
+                if (feature.properties.appellation) {
+                    popupContent += '<h3 style="margin: 0 0 10px 0;">' + feature.properties.appellation + '</h3>';
                 }
                 
                 // Display all properties
                 for (let key in feature.properties) {
-                    if (key !== 'name') {
+                    if (key !== 'appellation') {
                         popupContent += '<p style="margin: 5px 0;"><strong>' + key + ':</strong> ' + feature.properties[key] + '</p>';
                     }
                 }
